@@ -27,8 +27,6 @@
 // capitalized. (you can use the fifth’s exercise's function to
 // keep it dry)
 
-
-
 // 1. Write a function called doubleValues which accepts an
 // array of integers and returns a new array with all the
 // values in the array passed to the function doubled.
@@ -82,7 +80,6 @@ function slicer(arr) {
 // should be the count. e.g. {a:3, o:2,u:4}. Should not be
 // case-sensitive.
 
-
 function vowelCount(str) {
   const vowels = ["a", "e", "i", "o", "u"];
   str = str.split("");
@@ -94,7 +91,7 @@ function vowelCount(str) {
       result[item]++;
     }
   });
-  console.log(result)
+  console.log(result);
   return result;
 }
 // let someStr = "abcdefgduuuuudoooodiiide";
@@ -114,25 +111,27 @@ function capitalize(str) {
 // shifted down the alphabet by one.
 
 function shiftLetters(str) {
-  let moveBy = 1 // COULD BE DEFINED TO MOVE BY ANY NUMBER OF LETTERS HERE
-  let k = moveBy // k will be changed and restarted
+  let moveBy = 1; // COULD BE DEFINED TO MOVE BY ANY NUMBER OF LETTERS HERE
+  let k = moveBy; // k will be changed and restarted
   // converting all numbers to ascii values
-  let charsToNumbers = str.toLowerCase().split("").map(function (char, i, arr) {
-    return arr[i].charCodeAt()
-  })
+  let charsToNumbers = str
+    .toLowerCase()
+    .split("")
+    .map(function (char, i, arr) {
+      return arr[i].charCodeAt();
+    });
   // console.log(charsToNumbers)
-
   for (let j = 0; j < charsToNumbers.length; j++) {
     // keeping spaces
     if (charsToNumbers[j] === 32) {
-      charsToNumbers[j] = String.fromCharCode(charsToNumbers[j])
+      charsToNumbers[j] = String.fromCharCode(charsToNumbers[j]);
       continue;
     }
     // keeping a-1 in alphbet range
     if (charsToNumbers[j] - k < 97) {
       // math trick k=1 z.charCodeAt()=122 (a-1).charCodeAt() = 96
       // 1+=122-97 = 26  ---> 26 % 26 = 0 ---> k=1 --- return 122(value of z) - 1
-      k += (122 - charsToNumbers[j]);
+      k += 122 - charsToNumbers[j];
       k = k % 26;
       charsToNumbers[j] = String.fromCharCode(122 - k);
     } else {
@@ -141,7 +140,7 @@ function shiftLetters(str) {
     }
     k = moveBy;
   }
-  return charsToNumbers.join("")
+  return charsToNumbers.join("");
 }
 
 // console.log(shiftLetters("abcd efgh ijk")) // zabc defg hij
@@ -164,16 +163,3 @@ function swapCase(str) {
 }
 
 // console.log(swapCase("why like this why so serious?")) //WHY like THIS why SO serious?
-
-
-
-
-
-
-
-
-
-
-
-
-
