@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>JavaScript – forms</title>
+  </head>
+  <body>
+    <form class="formArea" action="submit">
+      <h3>User Details</h3>
+      <label for="userName">Name</label>
+      <input type="text" name="userName" id="userName" />
+      <br />
+      <label for="age">Age</label>
+      <input type="number" name="age" id="age" />
+      <br />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+      <br />
+      <input type="submit" value="Submit" />
+      <div id="textWindow">
+        <p id="recivedInfo">info</p>
+        <h3 id="success">success</h3>
+        <input type="button" id="goBack" value="Go back" />
+        <input type="button" id="confirm" value="Confirm" />
+      </div>
+    </form>
+  </body>
+</html>

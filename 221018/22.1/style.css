@@ -1,0 +1,53 @@
+html {
+    font-size: calc(15px + 0.65vw);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+
+.formArea {
+    position: relative;
+    width: clamp(220px, 20vw, 400px);
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #333;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+#textWindow {
+    position: absolute;
+    width: clamp(216px, 19.6vw, 400px);
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    opacity: 0.96;
+    outline: 4px solid #555;
+    border-radius: 0.51rem;
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    display: none;
+}
+
+h3,
+p {
+    text-align: center
+}
+
+input {
+    margin-top: 0.35rem
+}
+
+#success {
+    display: none;
+}
+
+input[type="button"] {
+    font-size: 0.75rem;
+    width: 4.20rem;
+    margin: 0.25rem auto;
+}
