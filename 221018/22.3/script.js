@@ -11,7 +11,7 @@ let secretChar = document.querySelector("#secret");
 const guessStatus = document.querySelector("#guessStatus");
 const guessedLetters = document.querySelector("#guessedLetters");
 const guessedLettersArr = [];
-const alphabet = "abcdefghijklmnopqrstuvwxyz";
+const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 //making the guess transparant so it would not show but still keep space
 guessStatus.style.color = "transparent";
 //keypress event listener
@@ -20,15 +20,20 @@ window.addEventListener("keyup", function eventlisten(e) {
   if (alphabet.includes(e.key)) {
     if (e.key === randomLetter) {
       //if currect inster the letter to the letter box
-      secretChar.innerHTML = e.key;
+      secretChar.innerHTML = e.key.toUpperCase();
       guessStatus.style.color = "green";
-      guessStatus.innerHTML = `You guessed right, the letter is ${e.key}`;
+      guessStatus.innerHTML = `You guessed right, the letter is ${e.key.toUpperCase()}`;
       guessStatus.style.display = "block";
       window.removeEventListener("keyup", eventlisten);
-    } else {
+    } else if (!guessedLettersArr.includes(e.key)){
       guessedLettersArr.push(e.key);
       guessedLetters.innerHTML = guessedLettersArr;
       guessStatus.innerHTML = "Nope, Wrong Letter";
+      guessStatus.style.color = "crimson";
+      guessStatus.style.display = "block";
+    } else {
+      console.log("AAAAAA")
+      guessStatus.innerHTML = `Allready tried ${e.key.toUpperCase()}, it's not there!`;
       guessStatus.style.color = "crimson";
       guessStatus.style.display = "block";
     }
