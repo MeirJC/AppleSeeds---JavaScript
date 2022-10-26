@@ -1,1 +1,5 @@
-# AppleSeeds-JavaScript
+# AppleSeeds JavaScript Assigments
+
+### MeirJC
+
+---

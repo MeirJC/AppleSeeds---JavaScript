@@ -1,0 +1,43 @@
+#main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+html {
+  font-family: 'Red Hat Mono', monospace;
+  font-size: calc(16px + 0.45vw);
+}
+
+.card {
+  margin: 3vw auto;
+  width: clamp(14rem, 22vw, 20rem);
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.35);
+  transition: 0.5s;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.35);
+  scale: 1.05;
+}
+
+.card>div {
+  padding: 0.75rem;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+img {
+  border-radius: 8px 8px 0 0;
+  width: 100%
+}
